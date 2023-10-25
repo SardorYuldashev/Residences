@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="header__content">
+        <div class="header__content-imgBox">
+          <img src="" id="logo">
+        </div>
+
+        <div class="header__content-contacts">
+          <ul class="header__content-list">
+            <li class="header__content-item">
+              <a href="#!" class="header__content-link">
+                <img class="header__content-icon" src="" id="telegram">
+              </a>
+            </li>
+
+            <li class="header__content-item">
+              <a href="#!" class="header__content-link">
+                <img class="header__content-icon" src="" id="whatsapp">
+              </a>
+            </li>
+          </ul>
+
+          <a href="#!" class="header__content-phone">
+            +99899 XXX XX XX
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main" id="main">
+    <div class="main__pin main__apartment">
+      <div class="main__pin-field" id="apartments" data-category="M1"></div>
+
+      <p class="main__pin-category">
+        M1
+      </p>
+
+      Apartments
+    </div>
+
+    <div class="main__pin main__mansion">
+      <div class="main__pin-field" id="mansions" data-category="M2"></div>
+
+      <p class="main__pin-category">
+        M2
+      </p>
+
+      Mansions
+    </div>
+
+    <div class="main__pin main__park">
+      <div class="main__pin-field" id="park" data-category="P2"></div>
+
+      <p class="main__pin-category">
+        P2
+      </p>
+
+      Park
+    </div>
+
+    <div class="main__pin main__road">
+      <div class="main__pin-field" id="road" data-category="R2"></div>
+
+      <p class="main__pin-category">
+        R2
+      </p>
+
+      Road
+    </div>
+
+    <div class="main__brochure" id="main_brochure">
+      <p class="main__brochure-text">
+        Download brochure
+      </p>
+
+      <img src="" id="download">
+    </div>
+  </main>
+
+  <section class="view" id="view">
+    <div class="view__head" id="closeView">
+      <span class="view__head-category">2</span>
+      <p class="view__head-text"></p>
+      <img src="" id="closeIcon">
+    </div>
+
+    <div class="view__content" id="viewer"></div>
+  </section>
+
+  <section class="brochure" id="brochure">
+    <div class="brochure__content">
+      <div class="brochure__content-info">
+        <div class="brochure__content-title">
+          don't miss <br> the unique offer
+        </div>
+
+        <div class="brochure__content-text">
+          Be the first to experience the beauty of Keturah Resort at our exclusive private screening event! Leave your
+          contact information below to receive an invitation to our special event.
+        </div>
+
+        <div class="brochure__content-contact">
+          <a href="#!" class="brochure__content-link">
+            <img src="" id="telegram2">
+            Telegram
+          </a>
+
+          <a href="#!" class="brochure__content-link">
+            <img src="" id="whatsapp2">
+            Whatsapp
+          </a>
+        </div>
+      </div>
+
+      <div class="brochure__content-output">
+        <div class="brochure__content-close">
+          <img class="brochure__content-closeBtn" src="" id="brochureClose">
+        </div>
+
+        <form class="brochure__content-form">
+          <input class="brochure__content-input" type="text" placeholder="Your name">
+          <input class="brochure__content-input" type="text" placeholder="Your e-mail">
+          <input class="brochure__content-input" type="text" placeholder="Phone number">
+          <button class="brochure__content-button">Join now</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

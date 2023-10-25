@@ -1,0 +1,365 @@
+@import '~@photo-sphere-viewer/core/index.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+body {
+  position: relative;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+
+  &__content {
+    padding: 25px 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ffffff;
+
+    &-imgBox {
+      padding-right: 20px;
+      border-right: 1px solid #ffffff;
+      position: relative;
+    }
+
+    &-contacts {
+      display: flex;
+      align-items: center;
+    }
+
+    &-list {
+      border-right: 1px solid #ffffff;
+      border-left: 1px solid #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 0 20px;
+    }
+
+    &-phone {
+      display: block;
+      margin-left: 20px;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 18px;
+      transition: .3s;
+      gap: 15px;
+    }
+  }
+}
+
+.main {
+  background: url("../assets/city.jpg");
+  width: 100%;
+  height: 100vh;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+
+  &__pin {
+    position: absolute;
+    display: flex;
+    gap: 11px;
+    align-items: center;
+    padding: 5px 9px;
+    cursor: pointer;
+    transition: .3s;
+    border: 1.19px solid rgba(255, 255, 255, 0.10);
+    background: #000;
+    color: #ffffff;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 14.286px;
+    font-weight: 500;
+
+    &:hover {
+      background: #790f0fcc;
+    }
+
+    &-field {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &-category {
+      width: 19px;
+      height: 19px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #000000;
+      font-size: 12px;
+      font-weight: 600;
+      background: #ffffff;
+    }
+  }
+
+  &__apartment {
+    top: 27%;
+    left: 50%;
+  }
+
+  &__mansion {
+    top: 64%;
+    left: 10%;
+  }
+
+  &__park {
+    top: 62%;
+    left: 32%;
+  }
+
+  &__road {
+    bottom: 21%;
+    right: 15%;
+  }
+
+  &__brochure {
+    cursor: pointer;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    border: 1.19px solid rgba(255, 255, 255, 0.10);
+    background: #000;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 7px 30px;
+    transition: .3s;
+
+    &:hover {
+      background: #790f0fcc;
+    }
+
+    &-text {
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 3;
+  background: url("../assets/modal_bg.jpg") no-repeat center center /cover;
+  transition: .3s;
+  visibility: hidden;
+  opacity: 0;
+
+  &__head {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 11px;
+    color: #ffffff;
+    font-size: 16px;
+
+    img {
+      transition: .3s;
+      cursor: pointer;
+
+      &:hover {
+        transform: rotateZ(90deg);
+      }
+    }
+
+    &-category {
+      font-weight: 400;
+      width: 30px;
+      height: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #ffffff;
+      cursor: default;
+    }
+
+    &-text {
+      font-weight: 500;
+      cursor: default;
+      text-transform: capitalize;
+    }
+  }
+
+  &__content {
+    width: 80%;
+    height: 80%;
+    background: #000000;
+  }
+}
+
+.brochure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: #000000e6;
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  transition: .3s;
+  visibility: hidden;
+  opacity: 0;
+
+  &__content {
+    width: 914px;
+    height: 440px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    &-info {
+      width: 457px;
+      height: 440px;
+      background: url("../assets/brochure.jpg") no-repeat center center /cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    &-title {
+      color: #FFF;
+      text-align: center;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-size: 45px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 100%;
+      text-transform: capitalize;
+    }
+
+    &-text {
+      max-width: 383px;
+      color: #ffffff;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+    }
+
+    &-contact {
+      display: flex;
+      gap: 30px;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #F3F2EF;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 210.2%;
+      transition: .3s;
+
+      &:hover {
+        color: #ff0000;
+      }
+    }
+
+    &-output {
+      width: 457px;
+      height: 100%;
+    }
+
+    &-close {
+      text-align: right;
+      margin-bottom: 60px;
+    }
+
+    &-closeBtn {
+      transition: .3s;
+      cursor: pointer;
+
+      &:hover {
+        transform: rotateZ(90deg);
+      }
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      width: 85%;
+    }
+
+    &-input {
+      outline: none;
+      border: none;
+      background: none;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 400;
+      border-bottom: 1px solid #919191;
+      opacity: 0.5;
+      padding: 5px 15px;
+    }
+
+    &-button {
+      border: none;
+      outline: none;
+      width: 100%;
+      height: 50px;
+      background: #ffffff;
+      color: #000;
+      font-size: 18px;
+      font-weight: 400;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: .3s;
+
+      &:hover {
+        background: #790f0fcc;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.active {
+  visibility: visible;
+  opacity: 1;
+}
